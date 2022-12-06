@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+
+    <tr>
+        <td><input id="inp" type="text"></td>
+        <td><select id="chon">
+            <option value="vnd" >VND</option>
+            <option value="usd">USD</option></select>
+        </td>
+
+        <td><select id="doi">
+            <option value="vnd" >VND</option>
+            <option value="usd" >USD</option>
+
+        </select></td>
+
+        <td><button onclick="trande()" type="button" id="">convert</button></td>
+    </tr>
+</table>
+result : <span id="kq"></span>
+
+
+<script>
+    function trande() {
+        let c = +document.getElementById('inp').value;
+        let a = document.getElementById('chon').value;
+        let b = document.getElementById('doi').value;
+
+
+        let sum = "";
+        if(a==b){
+            sum=c;
+        }else{
+            if(a=='vnd'){
+                sum=c*24000;
+            }else{
+                sum=c/24000;
+            }
+        }
+        document.getElementById('kq').innerHTML=sum;
+    }
+
+</script>
+</body>
+</html>
